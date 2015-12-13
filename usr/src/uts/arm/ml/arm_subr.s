@@ -35,7 +35,7 @@
 	 * assumes gcc behavior.
 	 */
 	ENTRY(caller)
-	mov	r0, [r9, #4]
+	ldr	r0, [r9]
 	bx	lr
 	SET_SIZE(caller)
 
