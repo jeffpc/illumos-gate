@@ -39,6 +39,15 @@
 	bx	lr
 	SET_SIZE(caller)
 
+	/*
+	 * a() calls b() calls callee()
+	 * return the return address in b()
+	 */
+	ENTRY(callee)
+	mov	r0, lr
+	bx	lr
+	SET_SIZE(callee)
+
 #define	SETPRI(lvl)							\
 	mov	r0, #lvl;						\
 	b	do_splx
